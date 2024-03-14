@@ -2,6 +2,9 @@ import os
 import requests
 from dotenv import load_dotenv
 
+# Путь внутри контейнера
+load_dotenv("/app/.env")
+
 
 def fetch_weather(api_key: str, city="Moscow") -> dict:
     url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric"
